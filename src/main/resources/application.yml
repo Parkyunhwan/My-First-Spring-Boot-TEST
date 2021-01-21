@@ -1,0 +1,40 @@
+server:
+  port: 80
+property:
+  test:
+      name: property depth test
+propertyTest: test
+propertyTestList: a,b,c
+
+fruit:
+  list:
+    - name: banana
+      color: yellow
+    - name: apple
+      color: red
+    - name: water melon
+      color: green
+# 2.0 부턴 소문자와 케밥 표기법만을 지원한다. (@ConfigurationProperties 유연한 바인딩)
+#  color-name: bbb
+  color_name: bbb
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+server:
+  port: 8080
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+server:
+  port: 8081
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+server:
+  port: 8082
